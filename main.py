@@ -1,7 +1,6 @@
 import streamlit as st
 from PIL import Image
 import numpy as np
-from annotated_text import annotated_text
 import tensorflow as tf
 import keras
 
