@@ -4,7 +4,10 @@ import numpy as np
 import tensorflow as tf
 import keras
 
-new_size = (60, 80)
+
+new_size = (64, 64)
+
+# new_size = (60, 80)
 
 def preprocess_image(image):
 
@@ -17,12 +20,13 @@ def preprocess_image(image):
 
 
 st.title('Phân loại đồ gia dụng')
-Class_names = ['ao', 'balo,tui xach,vi', 'do dien tu', 'dong ho', 'giay dep', 'mi pham', 'phu kien', 'quan', 'vay']
+Class_names = ['ao', 'Trang_suc','tui xach,vi', 'do dien tu', 'dong ho', 'giay dep', 'mi pham', 'phu kien', 'quan', 'vay']
+
 
 tab1, tab2 = st.tabs(['Camera', 'load image'])
 
-checkpoint_path = './save_at_7.keras'
-model = tf.keras.models.load_model(checkpoint_path)
+checkpoint_path = './Model_2.keras'
+model = keras.saving.load_model(checkpoint_path)
 
 with tab1:
     img_file_buffer = st.camera_input("Take a picture")
